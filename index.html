@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <title>Peta Sebaran MPD Provinsi Jawa Barat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 3 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f8fafc;
+      font-family: 'Poppins', sans-serif;
+      color: #1e293b;
+      padding-top: 40px;
+      padding-bottom: 60px;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .header .logo-box {
+      background-color: #ffffff;
+      display: inline-block;
+      padding: 20px 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .header .logo-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .header img {
+      width: 120px;
+      height: auto;
+    }
+
+    .header h1 {
+      font-weight: 700;
+      font-size: 26px;
+      color: #1f6feb;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      color: #475569;
+      font-size: 15px;
+      max-width: 740px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Card Map */
+    .card {
+      max-width: 880px;
+      margin: 0 auto;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 14px 36px rgba(0,0,0,0.12);
+    }
+
+    .card-header {
+      background: linear-gradient(135deg, #1f6feb, #2563eb);
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .map-responsive {
+      overflow: hidden;
+      padding-bottom: 56.25%;
+      position: relative;
+      height: 0;
+    }
+
+    .map-responsive iframe {
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      border: none;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    footer span {
+      color: #1f6feb;
+      font-weight: 600;
+    }
+
+    /* Animation */
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <div class="header fade-in">
+      <div class="logo-box">
+        <img src="peta-sebaran.png" alt="Logo Peta Sebaran">
+      </div>
+      <h1>Peta Sebaran MPD Provinsi Jawa Barat</h1>
+      <p>
+        Menampilkan persebaran <strong>Majelis Pengawas Daerah (MPD)</strong> di seluruh kabupaten dan kota di Jawa Barat.
+        Visualisasi interaktif ini membantu dalam memantau koordinasi, memperkuat pengawasan kinerja notaris, dan meningkatkan transparansi di wilayah Jawa Barat.
+      </p>
+    </div>
+
+    <!-- Peta -->
+    <div class="card fade-in">
+      <div class="card-header">Peta Sebaran MPD Provinsi Jawa Barat</div>
+      <div class="map-responsive">
+        <iframe src="https://www.google.com/maps/d/embed?mid=17uathkDtw-MnfXqIugYMIYRYaQN6fkQ&ehbc=2E312F" allowfullscreen title="Peta Sebaran MPD Provinsi Jawa Barat"></iframe>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="fade-in">
+      © 2025 <span>Kementerian Hukum</span> — Bidang Pelayanan Administrasi Hukum Umum, Kanwil Jawa Barat
+    </footer>
+  </div>
+
+</body>
+</html>
