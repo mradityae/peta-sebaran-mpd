@@ -2,11 +2,14 @@
 <html lang="id">
 <head>
   <meta charset="utf-8">
-  <title>Peta Sebaran MPD Provinsi Jawa Barat</title>
+  <title>Majelis Pengawas Notaris - Kementerian Hukum Jawa Barat</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Bootstrap 3 -->
+  <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -15,93 +18,117 @@
       background-color: #f8fafc;
       font-family: 'Poppins', sans-serif;
       color: #1e293b;
-      padding-top: 40px;
-      padding-bottom: 60px;
+      padding-top: 80px;
+      padding-bottom: 80px;
     }
 
-    /* Header */
-    .header {
+    /* ===== Tombol Kembali ===== */
+    .header-btn {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
     }
 
-    .header .logo-box {
-      background-color: #ffffff;
-      display: inline-block;
-      padding: 20px 30px;
-      border-radius: 16px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      margin-bottom: 20px;
-      transition: transform 0.3s ease;
-    }
-
-    .header .logo-box:hover {
-      transform: translateY(-5px);
-    }
-
-    .header img {
-      width: 120px;
-      height: auto;
-    }
-
-    .header h1 {
-      font-weight: 700;
-      font-size: 26px;
-      color: #1f6feb;
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-
-    .header p {
-      color: #475569;
+    .btn-back {
+      background-color: #1f6feb;
+      color: #fff !important;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      padding: 12px 28px;
       font-size: 15px;
-      max-width: 740px;
-      margin: 0 auto;
-      line-height: 1.6;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(31,111,235,0.3);
+      display: inline-block;
     }
 
-    /* Card Map */
-    .card {
-      max-width: 880px;
-      margin: 0 auto;
-      border-radius: 16px;
+    .btn-back:hover {
+      background-color: #2563eb;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(31,111,235,0.35);
+    }
+
+    /* ===== Layout ===== */
+    .container {
+      max-width: 1100px;
+    }
+
+    .tab-content {
       background: #fff;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      padding: 50px;
+      margin-top: 25px;
+      animation: fadeInUp 0.6s ease;
+    }
+
+    .nav-tabs {
+      margin-bottom: 25px;
+      border-bottom: none;
+    }
+
+    .nav-tabs > li > a {
+      border: none;
+      color: #475569;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 14px;
       transition: all 0.3s ease;
     }
 
-    .card:hover {
-      box-shadow: 0 14px 36px rgba(0,0,0,0.12);
-    }
-
-    .card-header {
-      background: linear-gradient(135deg, #1f6feb, #2563eb);
+    .nav-tabs > li.active > a,
+    .nav-tabs > li > a:hover {
+      background-color: #1f6feb;
       color: #fff;
-      padding: 15px;
-      text-align: center;
-      font-weight: 600;
-      font-size: 16px;
-      letter-spacing: 0.5px;
+      border-radius: 10px;
     }
 
-    .map-responsive {
-      overflow: hidden;
-      padding-bottom: 56.25%;
-      position: relative;
-      height: 0;
+    h1 {
+      text-align: center;
+      font-weight: 700;
+      color: #1f6feb;
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #64748b;
+      margin-bottom: 40px;
+      font-size: 15px;
+    }
+
+    h3 {
+      color: #1f6feb;
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    p, ul {
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    img.responsive {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      margin: 25px 0;
     }
 
     .map-responsive iframe {
-      left: 0;
-      top: 0;
-      height: 100%;
       width: 100%;
-      position: absolute;
+      height: 500px;
       border: none;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      margin-top: 20px;
     }
 
-    /* Footer */
     footer {
       text-align: center;
       margin-top: 60px;
@@ -114,47 +141,78 @@
       font-weight: 600;
     }
 
-    /* Animation */
+    /* ===== Animation ===== */
     @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
-
-    .fade-in {
-      animation: fadeInUp 0.8s ease forwards;
-    }
-
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <!-- Header -->
-    <div class="header fade-in">
-      <div class="logo-box">
-        <img src="peta-sebaran.png" alt="Logo Peta Sebaran">
+  <!-- Tombol Kembali -->
+  <div class="header-btn">
+    <a href="../" class="btn-back">← Kembali ke Beranda</a>
+  </div>
+
+  <!-- ===== Konten Utama ===== -->
+  <div class="container fade-in">
+    <h1>Majelis Pengawas Notaris</h1>
+    <p class="subtitle">
+      Informasi seputar pengawasan jabatan notaris, alur pelaporan pemeriksaan, serta peta sebaran MPD di wilayah Kementerian Hukum Jawa Barat.
+    </p>
+
+    <!-- Tabs -->
+    <ul class="nav nav-tabs nav-justified">
+      <li class="active"><a data-toggle="tab" href="#tab1">📘 Tentang Majelis Pengawas</a></li>
+      <li><a data-toggle="tab" href="#tab2">📋 Alur Laporan & Pemeriksaan</a></li>
+      <li><a data-toggle="tab" href="#tab3">🗺️ Peta Sebaran MPD</a></li>
+    </ul>
+
+    <div class="tab-content">
+
+      <!-- TAB 1 -->
+      <div id="tab1" class="tab-pane fade in active">
+        <h3>🏛️ Apa Itu Majelis Pengawas Notaris?</h3>
+        <p>
+          Majelis Pengawas Notaris adalah lembaga yang dibentuk oleh Menteri Hukum untuk melaksanakan pengawasan terhadap pelaksanaan jabatan notaris sebagaimana diatur dalam:
+        </p>
+        <ul>
+          <li>Undang-Undang Nomor 30 Tahun 2004 tentang Jabatan Notaris (UUJN); dan</li>
+          <li>Undang-Undang Nomor 2 Tahun 2014 tentang Perubahannya.</li>
+        </ul>
+        <p>
+          Majelis Pengawas berfungsi memastikan bahwa notaris menjalankan jabatannya sesuai dengan ketentuan hukum, kode etik, dan asas profesionalitas.
+        </p>
+
+        <h3>🧭 Tingkatan Majelis Pengawas Notaris</h3>
+        <img src="1.png" class="responsive" alt="Tingkatan Majelis Pengawas Notaris">
       </div>
-      <h1>Peta Sebaran MPD Provinsi Jawa Barat</h1>
-      <p>
-        Menampilkan persebaran <strong>Majelis Pengawas Daerah (MPD)</strong> di seluruh kabupaten dan kota di Jawa Barat.
-        Visualisasi interaktif ini membantu dalam memantau koordinasi, memperkuat pengawasan kinerja notaris, dan meningkatkan transparansi di wilayah Jawa Barat.
-      </p>
+
+      <!-- TAB 2 -->
+      <div id="tab2" class="tab-pane fade">
+        <h3>📋 Alur Pelaporan dan Pemeriksaan</h3>
+        <img src="2.png" class="responsive" alt="Alur Pelaporan dan Pemeriksaan">
+      </div>
+
+      <!-- TAB 3 -->
+      <div id="tab3" class="tab-pane fade">
+        <h3>🗺️ Peta Sebaran MPD di Jawa Barat</h3>
+        <p>
+          Peta berikut menampilkan persebaran <strong>Majelis Pengawas Daerah (MPD)</strong> di seluruh kabupaten dan kota di Jawa Barat.
+          Visualisasi ini digunakan untuk memantau koordinasi dan memperkuat pengawasan kinerja notaris di wilayah Kementerian Hukum Jawa Barat.
+        </p>
+
+        <div class="map-responsive">
+          <iframe src="https://www.google.com/maps/d/embed?mid=1UrApLzvnQmFn4xazMdbKdCvZNp-gIXU&ehbc=2E312F&noprof=1"></iframe>
+        </div>
+      </div>
     </div>
 
-    <!-- Peta -->
-    <div class="card fade-in">
-      <div class="card-header">Peta Sebaran MPD Provinsi Jawa Barat</div>
-      <div class="map-responsive">
-        <iframe src="https://www.google.com/maps/d/embed?mid=1UrApLzvnQmFn4xazMdbKdCvZNp-gIXU&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="fade-in">
-      © 2025 <span>Kementerian Hukum</span> — Bidang Pelayanan Administrasi Hukum Umum, Kanwil Jawa Barat
+    <footer>
+      © 2025 <span>Kementerian Hukum Jawa Barat</span>
     </footer>
   </div>
 
 </body>
-
 </html>
